@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakalenko.speech.MainController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu fx:id="fileMenu" mnemonicParsing="false" text="%fileMenu">
+                    <items>
+                        <MenuItem fx:id="open" mnemonicParsing="false" text="%fileMenu.open">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="save" mnemonicParsing="false" text="%fileMenu.save">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="close" mnemonicParsing="false" text="%fileMenu.close">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="exit" mnemonicParsing="false" text="%fileMenu.exit">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu fx:id="voiceInput" mnemonicParsing="false" text="%voiceInput">
+                    <items>
+                        <MenuItem fx:id="setParams" mnemonicParsing="false" text="%voiceInput.setParams" />
+                        <MenuItem fx:id="speakerAdjustment" mnemonicParsing="false" text="%voiceInput.speakerAdjustment" />
+                        <MenuItem fx:id="programmingLanguage" mnemonicParsing="false" text="%voiceInput.programmingLanguage" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="tokensReplacement" mnemonicParsing="false" text="%voiceInput.tokensReplacement" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="wordsHighlighting" mnemonicParsing="false" text="%voiceInput.wordsHighlighting" />
+                        <MenuItem fx:id="phrasesHighlighting" mnemonicParsing="false" text="%voiceInput.phrasesHighlighting" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="debugging" mnemonicParsing="false" text="%voiceInput.debugging" />
+                    </items>
+                </Menu>
+                <Menu fx:id="voiceOutput" mnemonicParsing="false" text="%voiceOutput">
+                    <items>
+                        <MenuItem fx:id="computerVoiceParams" mnemonicParsing="false" text="%voiceOutput.computerVoiceParams" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="backlitScoringTokens" mnemonicParsing="false" text="%voiceOutput.backlitScoringTokens" />
+                        <MenuItem fx:id="typeOfScoringTokens" mnemonicParsing="false" text="%voiceOutput.typeOfScoringTokens" />
+                        <MenuItem fx:id="stopInWords" mnemonicParsing="false" text="%voiceOutput.stopInWords" />
+                    </items>
+                </Menu>
+                <Menu fx:id="compilation" mnemonicParsing="false" text="%compilation" />
+                <Menu fx:id="settingsOfEditor" mnemonicParsing="false" text="%settingsOfEditor">
+                    <items>
+                        <Menu fx:id="changeLanguage" mnemonicParsing="false" text="%settingsOfEditor.changeLanguage">
+                            <items>
+                                <RadioMenuItem fx:id="changeToRus" mnemonicParsing="false" onAction="#changeLangRus" selected="true" text="%settingsOfEditor.changeLanguage.russianLang">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="changeLang" />
+                                    </toggleGroup>
+                                </RadioMenuItem>
+                                <RadioMenuItem fx:id="changeToEng" mnemonicParsing="false" onAction="#changeLangEng" text="%settingsOfEditor.changeLanguage.englishLang" toggleGroup="$changeLang" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="changeTheme" mnemonicParsing="false" text="%settingsOfEditor.changeTheme">
+                            <items>
+                                <RadioMenuItem fx:id="changeToLight" mnemonicParsing="false" onAction="#changeThemeLight" selected="true" text="%settingsOfEditor.changeTheme.lightTheme">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="changeThm" />
+                                    </toggleGroup>
+                                </RadioMenuItem>
+                                <RadioMenuItem fx:id="changeToDark" mnemonicParsing="false" onAction="#changeThemeDark" text="%settingsOfEditor.changeTheme.darkTheme" toggleGroup="$changeThm" />
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu fx:id="help" mnemonicParsing="false" text="%help">
+                    <items>
+                        <MenuItem fx:id="helpCHM" mnemonicParsing="false" text="%help.helpCHM">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="aboutProgram" mnemonicParsing="false" text="%help.aboutProgram" />
+                        <MenuItem fx:id="aboutAuthor" mnemonicParsing="false" text="%help.aboutAuthor" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <HTMLEditor fx:id="mainText" htmlText="" prefHeight="200.0" prefWidth="506.0" BorderPane.alignment="CENTER" />
+    </center>
+    <bottom>
+        <VBox prefHeight="35.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="17.0" prefWidth="800.0" spacing="10.0">
+                    <children>
+                        <ToggleButton fx:id="voiceInputBtn" mnemonicParsing="false" text="%voiceInputB">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="botButtons" />
+                            </toggleGroup></ToggleButton>
+                        <ToggleButton fx:id="voiceOutputBtn" mnemonicParsing="false" text="%voiceOutputB" toggleGroup="$botButtons" />
+                        <Separator orientation="VERTICAL" prefHeight="200.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <padding>
+                                <Insets left="5.0" right="5.0" />
+                            </padding>
+                        </Separator>
+                        <Label fx:id="statusLabel">
+                            <padding>
+                                <Insets left="-2.0" top="8.0" />
+                            </padding>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>
