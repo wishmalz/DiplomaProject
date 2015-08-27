@@ -1,6 +1,3 @@
-/**
- * Created by Wish on 25.08.2015.
- */
 package com.bakalenko.speech;
 
 import java.io.IOException;
@@ -16,11 +13,14 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.web.HTMLEditor;
 
+/**
+ * Controller class that handles all actions of the program interface
+ * @version 25.08.2015
+ * @author Wish
+ */
 public class MainController implements Initializable{
     private ResourceBundle resources;
-
     @FXML private BorderPane pane;
     @FXML private Menu fileMenu;
     @FXML private MenuItem open;
@@ -52,7 +52,6 @@ public class MainController implements Initializable{
     @FXML private MenuItem helpCHM;
     @FXML private MenuItem aboutProgram;
     @FXML private MenuItem aboutAuthor;
-    @FXML private HTMLEditor mainText;
     @FXML private ToggleButton voiceInputBtn;
     @FXML private ToggleButton voiceOutputBtn;
 
@@ -60,17 +59,21 @@ public class MainController implements Initializable{
     public void initialize(URL location, ResourceBundle bundle) {
         resources = bundle;
 
-        mainText.lookup(".top-toolbar").setManaged(false);
-        mainText.lookup(".top-toolbar").setVisible(false);
-        mainText.lookup(".bottom-toolbar").setManaged(false);
-        mainText.lookup(".bottom-toolbar").setVisible(false);
     }
 
+    /**
+     * Changes language of the application to russian
+     * @throws IOException
+     */
     @FXML
     private void changeLangRus() throws IOException {
         updateUI(Locale.forLanguageTag("ru"));
     }
 
+    /**
+     * Changes language of the application to english
+     * @throws IOException
+     */
     @FXML
     private void changeLangEng()throws IOException {
         updateUI(Locale.ENGLISH);
@@ -85,12 +88,15 @@ public class MainController implements Initializable{
 
     }
 
+    /**
+     * Updates text of all UI controls of the application
+     * @param locale - language of the app
+     */
     private void updateUI(Locale locale){
         try {
             resources = ResourceBundle.getBundle("com.bakalenko.resources.TextBundle", locale);
             pane = FXMLLoader.load(getClass().getResource("mainWindow.fxml"), resources);
 
-            Main.stage.setTitle(resources.getString("appName"));
             fileMenu.setText(resources.getString("fileMenu"));
             open.setText(resources.getString("fileMenu.open"));
             save.setText(resources.getString("fileMenu.save"));
