@@ -33,7 +33,6 @@ do
 dollar
 dot
 downto
-duo-quotes
 eight
 else
 end
@@ -93,6 +92,7 @@ pos
 pred
 procedure
 program
+public
 random
 read
 readkey
@@ -135,6 +135,7 @@ upcase
 uses
 val
 var
+variable
 virtual
 while
 with

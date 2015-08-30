@@ -18,6 +18,8 @@
 package com.bakalenko.speech;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -34,19 +36,36 @@ import java.util.ResourceBundle;
 public class Main extends Application {
     /** Variable with default locale for the application */
     private Locale currentLocale = Locale.forLanguageTag("ru");
+    private Scene mainScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         ResourceBundle textResources = ResourceBundle.getBundle("com.bakalenko.resources.TextBundle", currentLocale);
         BorderPane root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"), textResources);
 
-        Scene mainScene = new Scene(root);
+        mainScene = new Scene(root);
         primaryStage.setTitle(textResources.getString("appName"));
         primaryStage.setResizable(false);
         primaryStage.setScene(mainScene);
-
+        primaryStage.getScene().getStylesheets().add("com/bakalenko/resources/css/LightTheme.css");
         primaryStage.show();
+
+        mainScene.widthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+                System.out.println("Width: " + newSceneWidth);
+            }
+        });
+
+        mainScene.heightProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
+                System.out.println("Height: " + newSceneHeight);
+            }
+        });
     }
+
+
 
     // Launch the JavaFX application
     public static void main(String[] args) {

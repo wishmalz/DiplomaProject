@@ -8,11 +8,9 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.RadioMenuItem;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.*;
 
 /**
  * Controller class that handles all actions of the program interface
@@ -54,11 +52,16 @@ public class MainController implements Initializable{
     @FXML private MenuItem aboutAuthor;
     @FXML private ToggleButton voiceInputBtn;
     @FXML private ToggleButton voiceOutputBtn;
+    @FXML private TextFlow mainText;
+    @FXML private SplitPane splitPaneTwoTextAreas;
+    @FXML private TextArea inputPlainText;
+    @FXML private TextFlow richText;
 
     @Override
     public void initialize(URL location, ResourceBundle bundle) {
         resources = bundle;
-
+        splitPaneTwoTextAreas.setDividerPositions(1);
+        inputPlainText.setStyle("-fx-font-size: 16");
     }
 
     /**
@@ -68,6 +71,7 @@ public class MainController implements Initializable{
     @FXML
     private void changeLangRus() throws IOException {
         updateUI(Locale.forLanguageTag("ru"));
+        /* TODO добавить флаг, чтобы не перерисовывать зря, если мы уже на том языке, в который переключаемся*/
     }
 
     /**
@@ -81,11 +85,12 @@ public class MainController implements Initializable{
 
     @FXML
     private void changeThemeLight(){
-
+        /* TODO добавить флаг, чтобы не перерисовывать зря, если мы уже на той теме, в которую переключаемся*/
     }
+
     @FXML
     private void changeThemeDark(){
-
+        voiceInputBtn.setStyle("-fx-background-color: lightgreen;");
     }
 
     /**
