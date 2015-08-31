@@ -107,7 +107,8 @@
             <children>
                 <HBox prefHeight="17.0" prefWidth="800.0" spacing="10.0">
                     <children>
-                        <ToggleButton fx:id="voiceInputBtn" mnemonicParsing="false" text="%voiceInputB">
+                        <ToggleButton fx:id="voiceInputBtn" mnemonicParsing="false" text="%voiceInputB"
+                                      onAction="#startRecognition">
                             <toggleGroup>
                                 <ToggleGroup fx:id="botButtons" />
                             </toggleGroup></ToggleButton>
@@ -148,11 +149,7 @@
                     <children>
                         <ScrollPane prefHeight="418.0" prefWidth="396.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-                                    <children>
-                                        <TextFlow prefHeight="415.0" prefWidth="394.0" AnchorPane.bottomAnchor="-215.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-194.0" AnchorPane.topAnchor="0.0" />
-                                    </children>
-                                </AnchorPane>
+                                        <TextFlow fx:id="highlightedText" prefHeight="580.0" prefWidth="787.0" />
                             </content>
                         </ScrollPane>
                     </children>

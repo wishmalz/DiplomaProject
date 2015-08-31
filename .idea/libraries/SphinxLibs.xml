@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="SphinxLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/batch.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/js.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsapi-1.0-base.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsapi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sphinx4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tags.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

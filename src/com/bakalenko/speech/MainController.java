@@ -5,11 +5,17 @@ import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import com.bakalenko.speech.recognition.RecognitionThread;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 
 /**
@@ -18,6 +24,7 @@ import javafx.scene.text.*;
  * @author Wish
  */
 public class MainController implements Initializable{
+    private RecognitionThread recognitionThread;
     private ResourceBundle resources;
     @FXML private BorderPane pane;
     @FXML private Menu fileMenu;
@@ -54,14 +61,25 @@ public class MainController implements Initializable{
     @FXML private ToggleButton voiceOutputBtn;
     @FXML private TextFlow mainText;
     @FXML private SplitPane splitPaneTwoTextAreas;
+    @FXML private Label statusLabel;
     @FXML private TextArea inputPlainText;
-    @FXML private TextFlow richText;
+    @FXML private TextFlow highlightedText;
 
     @Override
     public void initialize(URL location, ResourceBundle bundle) {
         resources = bundle;
         splitPaneTwoTextAreas.setDividerPositions(1);
         inputPlainText.setStyle("-fx-font-size: 16");
+        Text test = new Text("TEst");
+        test.setFill(Color.LIME);
+        test.setUnderline(false);
+        test.setFont(new Font("Times New Roman", 20));
+        Text test1 = new Text("TEst");
+        test1.setFill(Color.CRIMSON);
+        test1.setUnderline(true);
+        test1.setFont(new Font("Times New Roman", 18));
+        highlightedText.getChildren().addAll(test, test1);
+        highlightedText.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
     /**
@@ -138,4 +156,22 @@ public class MainController implements Initializable{
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void startRecognition() {
+        if(recognitionThread == null) {
+            recognitionThread = new RecognitionThread(statusLabel, inputPlainText);
+        }
+        //splitPaneTwoTextAreas.setDividerPositions(0);
+    }
+
+    public void addText(String text) {
+
+    }
+
+    public void setStatus(String statusText) {
+        statusLabel.setText(statusText);
+    }
+
+
 }

@@ -1,0 +1,138 @@
+ACUTE - Main 
+AMPERSAND - Main 
+AND - Main 
+ARRAY - Main 
+pronounce: verbosity is 1
+ASM - By LtoS rules
+ASSIGN - Main 
+ASTERISK - Main 
+AT - Main 
+BACKSLASH - Main 
+BEGIN - Main 
+BOOLEAN - Main 
+BYTE - Main 
+CARET - By LtoS rules
+CASE - Main 
+CHAR - Main 
+COLON - Main 
+COMMA - Main 
+CONST - By LtoS rules
+CONSTRUCTOR - Main 
+DESTRUCTOR - Morpheme: DESTRUCT OR 
+DIV - By LtoS rules
+DIVIDE - Main 
+DO - Main 
+DOLLAR - Main 
+DOT - Main 
+DOUBLE - Main 
+DOWNTO - By LtoS rules
+EIGHT - Main 
+ELSE - Main 
+END - Main 
+EQUALS - Main 
+EXCLAMATION - Main [base] 
+MARK - Main [base] 
+EXPORTS - Main 
+EXTENDED - Main 
+FALSE - Main 
+FILE - Main 
+FIVE - Main 
+FOR - Main 
+FOUR - Main 
+FULL - Main [base] 
+STOP - Main [base] 
+FUNCTION - Main 
+GOTO - Main 
+HASH - Main 
+IF - Main 
+IMPLEMENTATION - Main 
+IN - Main 
+INHERITED - Main 
+INLINE - Morpheme: IN LINE 
+INTEGER - Main 
+INTERFACE - Main 
+LABEL - Main 
+LEFT-BRACE - Main 
+LEFT - Main [base] 
+PARENTHESIS - Main [base] 
+LEFT - Main [base] 
+SQUARE - Main [base] 
+BRACKET - Main [base] 
+LESS - Main 
+LIBRARY - Main 
+MINUS - Main 
+MOD - Main 
+MORE - Main 
+MULTIPLY - Main 
+NAME - Main 
+NEW - Main 
+NEWLINE - Morpheme: NEW LINE 
+NIL - Main 
+NINE - Main 
+NOT - Main 
+NOT - Main [base] 
+EQUAL - Main [base] 
+OBJECT - Main 
+OF - Main 
+ONE - Main 
+OR - Main 
+PACKED - Main 
+PERCENT - Main 
+PI - Main 
+PIPE - Main 
+PLUS - Main 
+PROCEDURE - Main 
+PROGRAM - Main 
+QUESTION-MARK - Main 
+QUOTE - Main 
+RANDOM - Main 
+READ - Main 
+REAL - Main 
+RECORD - Main 
+REPEAT - Main 
+RIGHT-BRACE - Main 
+RIGHT - Main [base] 
+PARENTHESIS - Main [base] 
+RIGHT - Main [base] 
+SQUARE - Main [base] 
+BRACKET - Main [base] 
+SEMICOLON - Morpheme: SEMI COLON 
+SET - Main 
+SEVEN - Main 
+I think this is a non-word: SHL
+LETTER-S - Morpheme: LETTER-S 
+LETTER-H - Morpheme: LETTER-H 
+L - By LtoS rules
+I think this is a non-word: SHR
+LETTER-S - Morpheme: LETTER-S 
+LETTER-H - Morpheme: LETTER-H 
+R - By LtoS rules
+SINGLE - Main 
+SIX - Main 
+SLASH - Main 
+SPACE - Main 
+SQUARE - Main 
+SQUARE - Main [base] 
+ROOT - Main [base] 
+STRING - Main 
+TAB - Main 
+THEN - Main 
+THREE - Main 
+TILDE - By LtoS rules
+TO - Main 
+TRUE - Main 
+TWO - Main 
+TYPE - Main 
+UNDERSCORE - Main 
+UNIT - Main 
+UNTIL - Main 
+USES - Main 
+VAR - By LtoS rules
+VARIABLE - Main 
+WHILE - Main 
+WITH - Main 
+WORD - Main 
+WRITE - Main 
+XOR - By LtoS rules
+ZERO - Main 
+
