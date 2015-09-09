@@ -44,6 +44,12 @@ public class RecognitionThread implements Runnable {
 
         // allocate the recognizer
         System.out.println("Loading...");
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                statusLabel.setText("Loading...");
+            }
+        });
         recognizer = (Recognizer) cm.lookup("recognizer");
         recognizer.allocate();
 
@@ -58,9 +64,16 @@ public class RecognitionThread implements Runnable {
             System.out.println("Microphone started");
         }
 
+        //statusLabel.setText("Recognition started");
         // loop the recognition until the program exits
         while (true) {
             System.out.println("Recognition started. Say smthng");
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    statusLabel.setText("Recognition started");
+                }
+            });
             result = recognizer.recognize();
 
             if (result != null) {
