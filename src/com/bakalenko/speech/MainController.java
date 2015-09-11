@@ -1,11 +1,14 @@
 package com.bakalenko.speech;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 import com.bakalenko.speech.recognition.RecognitionThread;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +20,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
+import javafx.stage.FileChooser;
 
 /**
  * Controller class that handles all actions of the program interface
@@ -64,12 +68,13 @@ public class MainController implements Initializable{
     @FXML private Label statusLabel;
     @FXML private TextArea inputPlainText;
     @FXML private TextFlow highlightedText;
+    final FileChooser fileChooser = new FileChooser();
 
     @Override
     public void initialize(URL location, ResourceBundle bundle) {
         resources = bundle;
         splitPaneTwoTextAreas.setDividerPositions(1);
-        inputPlainText.setStyle("-fx-font-size: 16");
+        inputPlainText.setStyle("-fx-font-size: 18");
         Text test = new Text("TEst");
         test.setFill(Color.LIME);
         test.setUnderline(false);
@@ -173,5 +178,77 @@ public class MainController implements Initializable{
         statusLabel.setText(statusText);
     }
 
+    @FXML
+    public void openFile() {
+        fileChooser.setTitle("Open Pascal File");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Pascal files", "*.pas"));
+        File openFile = fileChooser.showOpenDialog(Main.stage);
+        if (openFile != null) {
+            String line = null;
+            StringBuffer records = new StringBuffer(0);
 
+            // wrap a BufferedReader around FileReader
+            BufferedReader bufferedReader = null;
+            try {
+                bufferedReader = new BufferedReader(new FileReader(openFile));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            // use the readLine method of the BufferedReader to read one line at a time.
+            // the readLine method returns null when there is nothing else to read.
+            try {
+                while ((line = bufferedReader.readLine()) != null)
+                {
+                    records.append(line);
+                    records.append('\n');
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            // close the BufferedReader when we're done
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            inputPlainText.setText(records.toString());
+        }
+
+        /*
+        */
+    }
+
+    @FXML
+    public void saveFile() {
+        //TODO добавить флаг проверки сохранен ли файл перед закрытием
+        fileChooser.setTitle("Save Pascal File");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Pascal files", "*.pas"));
+        File saveFile = fileChooser.showSaveDialog(Main.stage);
+
+        if(saveFile != null) {
+            FileWriter fw = null;
+            try {
+                fw = new FileWriter(saveFile);
+                fw.write(inputPlainText.getText());
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    @FXML
+    public void closeFile() {
+        //TODO был ли сохранен файл
+        inputPlainText.setText("");
+    }
+
+    @FXML
+    public void exitProgram() {
+        Platform.exit();
+    }
 }

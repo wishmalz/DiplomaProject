@@ -83,14 +83,149 @@ public class RecognitionThread implements Runnable {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        text.setText(resultString);
+                        text.appendText(replaceWords(resultString));
                     }
                 });
-
 
                 System.out.println(resultString);
             }
         }
+    }
+
+    public String replaceWords(String inputText) {
+        String [] words = inputText.split("[\\s]");
+        for(String singleUtteredWord:words){
+            switch (singleUtteredWord) {
+                case "divide":
+                case "slash": {
+                    singleUtteredWord = "/";
+                    break;
+                }
+                case "and": {
+                    singleUtteredWord = "and ";
+                    break;
+                }
+                case "multiply":
+                case "asterisk": {
+                    singleUtteredWord = "*";
+                    break;
+                }
+                case "at": {
+                    singleUtteredWord = "@";
+                    break;
+                }
+                case "backslash": {
+                    singleUtteredWord = "\\";
+                    break;
+                }
+                case "caret": {
+                    singleUtteredWord = "^";
+                    break;
+                }
+                case "colon": {
+                    singleUtteredWord = ":";
+                    break;
+                }
+                case "comma": {
+                    singleUtteredWord = ",";
+                    break;
+                }
+                case "full-stop":
+                case "dot": {
+                    singleUtteredWord = ".";
+                    break;
+                }
+                case "equals": {
+                    singleUtteredWord = "=";
+                    break;
+                }
+                case "left-parenthesis": {
+                    singleUtteredWord = "(";
+                    break;
+                }
+                case "left-square-bracket": {
+                    singleUtteredWord = "[";
+                    break;
+                }
+                case "less": {
+                    singleUtteredWord = "<";
+                    break;
+                }
+                case "minus": {
+                    singleUtteredWord = "-";
+                    break;
+                }
+                case "more": {
+                    singleUtteredWord = ">";
+                    break;
+                }
+                case "newline": {
+                    singleUtteredWord = "\n";
+                    break;
+                }
+                case "not-equal": {
+                    singleUtteredWord = "<>";
+                    break;
+                }
+                case "percent": {
+                    singleUtteredWord = "%";
+                    break;
+                }
+                case "plus": {
+                    singleUtteredWord = "+";
+                    break;
+                }
+                case "procedure": {
+                    singleUtteredWord = "Procedure";
+                    break;
+                }
+                case "function": {
+                    singleUtteredWord = "Function";
+                    break;
+                }
+                case "program": {
+                    singleUtteredWord = "Program";
+                    break;
+                }
+                case "quote": {
+                    singleUtteredWord = "'";
+                    break;
+                }
+                case "right-parenthesis": {
+                    singleUtteredWord = ")";
+                    break;
+                }
+                case "right-square-bracket": {
+                    singleUtteredWord = "]";
+                    break;
+                }
+                case "semicolon": {
+                    singleUtteredWord = ";";
+                    break;
+                }
+                case "space": {
+                    singleUtteredWord = " ";
+                    break;
+                }
+                case "square": {
+                    singleUtteredWord = "sqr";
+                    break;
+                }
+                case "square-root": {
+                    singleUtteredWord = "sqrt";
+                    break;
+                }
+                case "tab": {
+                    singleUtteredWord = "    ";
+                    break;
+                }
+                default: {
+                    singleUtteredWord = singleUtteredWord;
+                    break;
+                }
+            }
+        }
+        return words.toString();
     }
 
 }

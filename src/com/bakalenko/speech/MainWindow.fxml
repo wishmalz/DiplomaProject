@@ -16,23 +16,24 @@
             <menus>
                 <Menu fx:id="fileMenu" mnemonicParsing="false" text="%fileMenu">
                     <items>
-                        <MenuItem fx:id="open" mnemonicParsing="false" text="%fileMenu.open">
+                        <MenuItem fx:id="open" mnemonicParsing="false" text="%fileMenu.open"
+                                  onAction="#openFile">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
-                        <MenuItem fx:id="save" mnemonicParsing="false" text="%fileMenu.save">
+                        <MenuItem fx:id="save" mnemonicParsing="false" text="%fileMenu.save" onAction="#saveFile">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
-                        <MenuItem fx:id="close" mnemonicParsing="false" text="%fileMenu.close">
+                        <MenuItem fx:id="close" mnemonicParsing="false" text="%fileMenu.close" onAction="#closeFile">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem fx:id="exit" mnemonicParsing="false" text="%fileMenu.exit">
+                        <MenuItem fx:id="exit" mnemonicParsing="false" text="%fileMenu.exit" onAction="#exitProgram">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>

@@ -3,6 +3,13 @@
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/bakalenko/speech/recognition/RecognitionThread.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.dic" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.lm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.log_pronounce" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.sent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.vocab" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/dictionary.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/dictionary.txt" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>

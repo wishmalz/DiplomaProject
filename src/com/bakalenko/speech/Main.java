@@ -37,9 +37,11 @@ public class Main extends Application {
     /** Variable with default locale for the application */
     private Locale currentLocale = Locale.forLanguageTag("ru");
     private Scene mainScene;
+    public static Stage stage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        stage = primaryStage;
         ResourceBundle textResources = ResourceBundle.getBundle("com.bakalenko.resources.TextBundle", currentLocale);
         BorderPane root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"), textResources);
 
