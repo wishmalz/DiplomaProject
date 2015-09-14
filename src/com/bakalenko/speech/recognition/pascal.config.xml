@@ -156,7 +156,7 @@
     <component name="trigramModel" 
         type="edu.cmu.sphinx.linguist.language.ngram.SimpleNGramModel">
         <property name="location" 
-            value="resource:/com/bakalenko/sphinx_data/tuned/7333.lm"/>
+            value="resource:/com/bakalenko/sphinx_data/tuned/7991.lm"/>
         <property name="logMath" value="logMath"/>
         <property name="dictionary" value="dictionary"/>
         <property name="maxDepth" value="3"/>

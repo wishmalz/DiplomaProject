@@ -276,3 +276,19 @@ caret string
 at name
 quote value quote
 name comma
+variable comma variable
+end semicolon
+left-square-bracket value dot dot value right-square-bracket
+right-square-bracket assign
+variable left-square-bracket
+then name left-parenthesis
+program name semicolon var
+semicolon function
+end semicolon begin
+end semicolon function
+end semicolon procedure
+semicolon procedure
+semicolon const
+procedure name semicolon
+function name colon
+end semicolon end
