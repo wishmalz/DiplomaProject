@@ -2,10 +2,7 @@ package com.bakalenko.speech;
 
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import com.bakalenko.speech.recognition.RecognitionThread;
 import javafx.application.Platform;
@@ -13,14 +10,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.stage.FileChooser;
+import javafx.util.Pair;
 
 /**
  * Controller class that handles all actions of the program interface
@@ -123,7 +120,7 @@ public class MainController implements Initializable{
     private void updateUI(Locale locale){
         try {
             resources = ResourceBundle.getBundle("com.bakalenko.resources.TextBundle", locale);
-            pane = FXMLLoader.load(getClass().getResource("mainWindow.fxml"), resources);
+            pane = FXMLLoader.load(getClass().getResource("MainWindow.fxml"), resources);
 
             fileMenu.setText(resources.getString("fileMenu"));
             open.setText(resources.getString("fileMenu.open"));
@@ -164,6 +161,7 @@ public class MainController implements Initializable{
 
     @FXML
     private void startRecognition() {
+        inputPlainText.setEditable(false);
         if(recognitionThread == null) {
             recognitionThread = new RecognitionThread(statusLabel, inputPlainText);
         }
@@ -251,4 +249,63 @@ public class MainController implements Initializable{
     public void exitProgram() {
         Platform.exit();
     }
+
+    @FXML
+    public void aboutAuthor() {
+        //TODO дописать текст
+        // Create the custom dialog.
+        Dialog dialog = new Dialog<>();
+        dialog.setTitle("About Author");
+        // Set the icon (must be included in the project).
+        //dialog.setGraphic(new ImageView(this.getClass().getResource("login.png").toString()));
+
+// Set the button types
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK);
+
+// Create the username and password labels and fields.
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(20, 150, 10, 10));
+
+        grid.add(new Label("Author Bakalenko V S"), 0, 0);
+
+        dialog.getDialogPane().setContent(grid);
+
+        // Traditional way to get the response value.
+        Optional result = dialog.showAndWait();
+        if (result.isPresent()){
+            System.out.println("Ok author dialog");
+        }
+    }
+
+    @FXML
+    public void aboutProgram() {
+        //TODO дописать текст
+        // Create the custom dialog.
+        Dialog dialog = new Dialog<>();
+        dialog.setTitle("About Program");
+        // Set the icon (must be included in the project).
+        //dialog.setGraphic(new ImageView(this.getClass().getResource("login.png").toString()));
+
+// Set the button types
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK);
+
+// Create the username and password labels and fields.
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(20, 150, 10, 10));
+
+        grid.add(new Label("Program AIO Coding"), 0, 0);
+
+        dialog.getDialogPane().setContent(grid);
+
+        // Traditional way to get the response value.
+        Optional result = dialog.showAndWait();
+        if (result.isPresent()){
+            System.out.println("Ok program dialog");
+        }
+    }
+
 }

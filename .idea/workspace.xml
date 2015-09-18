@@ -23,24 +23,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RecognitionThread.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RecognitionThread.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/recognition/RecognitionThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="228" column="44" selection-start-line="228" selection-start-column="44" selection-end-line="228" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.461837">
+              <caret line="158" column="42" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -49,30 +39,17 @@
         <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="235" column="27" selection-start-line="235" selection-start-column="27" selection-end-line="235" selection-end-column="27" />
+              <caret line="176" column="5" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="35" column="115" selection-start-line="35" selection-start-column="115" selection-end-line="35" selection-end-column="115" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pascal.config.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pascal.config.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/recognition/pascal.config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4555556">
-              <caret line="158" column="65" selection-start-line="158" selection-start-column="65" selection-end-line="158" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="181" column="69" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -101,24 +78,34 @@
         <option value="$PROJECT_DIR$/src/TextBundle.properties" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/resources/css/LightTheme" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/resources/css/LightTheme.css" />
-        <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/dictionary.txt" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.vocab" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.dic" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.lm" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.log_pronounce" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7333.sent" />
-        <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/dictionary.txt" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/speech/Main.java" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/speech/MainController.java" />
-        <option value="$PROJECT_DIR$/src/com/bakalenko/speech/recognition/RecognitionThread.java" />
+        <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/7991.sent" />
+        <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/dictionary.txt" />
+        <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/6018.dic" />
+        <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/6018.sent" />
+        <option value="$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/dictionary.txt" />
         <option value="$PROJECT_DIR$/src/com/bakalenko/speech/recognition/pascal.config.xml" />
+        <option value="$PROJECT_DIR$/src/com/bakalenko/speech/recognition/RecognitionThread.java" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="NamedScopeManager">
     <order />
@@ -152,7 +139,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,8 +183,34 @@
               <option name="myItemId" value="sphinx_data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="untuned" />
+              <option name="myItemId" value="DiplomaProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DiplomaProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bakalenko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sphinx_data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuned_speaker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -227,33 +240,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tuned" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiplomaProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiplomaProject" />
+              <option name="myItemId" value="tuned_speaker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bakalenko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sphinx_data" />
+              <option name="myItemId" value="cont" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,29 +343,11 @@
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiplomaProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiplomaProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,12 +369,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="X:\Projects\DiplomaProject\lib" />
-      <recent name="X:\Projects\DiplomaProject\src\com\bakalenko\sphinx_data\untuned" />
-      <recent name="X:\Projects\DiplomaProject\src\com\bakalenko\speech\recognition" />
+      <recent name="X:\Projects\DiplomaProject\src\com\bakalenko\sphinx_data\tuned_speaker" />
       <recent name="X:\Projects\DiplomaProject\src\com\bakalenko\sphinx_data\tuned" />
+      <recent name="X:\Projects\DiplomaProject\src\com\bakalenko\sphinx_data\untuned" />
+      <recent name="X:\Projects\DiplomaProject\lib" />
+      <recent name="X:\Projects\DiplomaProject\src\com\bakalenko\speech\recognition" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\Projects\DiplomaProject\src\com\bakalenko\sphinx_data" />
+      <recent name="X:\Projects\DiplomaProject\src\com\bakalenko\sphinx_data\tuned_speaker\pascal_models\acoustic_model" />
       <recent name="X:\Projects\DiplomaProject\src\com\bakalenko\resources" />
       <recent name="X:\Projects\DiplomaProject\src" />
     </key>
@@ -822,12 +798,21 @@
       <workItem from="1441788127536" duration="969000" />
       <workItem from="1441831214304" duration="7628000" />
       <workItem from="1441975829909" duration="3427000" />
-      <workItem from="1442164156174" duration="6980000" />
+      <workItem from="1442164156174" duration="10674000" />
+      <workItem from="1442271220464" duration="4320000" />
+      <workItem from="1442337702171" duration="2305000" />
+      <workItem from="1442350981677" duration="14927000" />
+      <workItem from="1442473484851" duration="6982000" />
+      <workItem from="1442494333132" duration="562000" />
+      <workItem from="1442511412829" duration="2782000" />
+      <workItem from="1442579018583" duration="2295000" />
+      <workItem from="1442606283164" duration="146000" />
+      <workItem from="1442609441518" duration="2243000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82447000" />
+    <option name="totallyTimeSpent" value="122703000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -840,7 +825,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -850,10 +835,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22487047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16994819" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19083156" sideWeight="0.49498746" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18336888" sideWeight="0.49498746" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -893,18 +878,15 @@
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="161" column="30" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
+          <caret line="296" column="25" selection-start-line="296" selection-start-column="25" selection-end-line="296" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/recognition/RecognitionThread.java">
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/dictionary.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -940,14 +922,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="129" column="30" selection-start-line="129" selection-start-column="30" selection-end-line="129" selection-end-column="30" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java">
@@ -980,14 +962,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="129" column="30" selection-start-line="129" selection-start-column="30" selection-end-line="129" selection-end-column="30" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java">
@@ -1020,14 +1002,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="129" column="30" selection-start-line="129" selection-start-column="30" selection-end-line="129" selection-end-column="30" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java">
@@ -1053,14 +1035,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java">
@@ -1086,24 +1068,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/resources/TextBundle.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
+      <provider editor-type-id="ResourceBundle">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java">
@@ -1122,78 +1104,50 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/resources/TextBundle.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
+      <provider editor-type-id="ResourceBundle">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/resources/TextBundle_en.properties">
-      <provider editor-type-id="ResourceBundle">
+      <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/resources/TextBundle_en.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82711864">
           <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/resources/TextBundle.properties">
       <provider editor-type-id="ResourceBundle">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/resources/TextBundle.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59911895">
           <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
         </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/resources/css/LightTheme.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/1424.sent">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/1424.vocab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/1424.lm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/1424.log_pronounce">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1204,27 +1158,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/1424.dic">
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="69" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/8268.dic">
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37195995">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/8268.lm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.769333">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/untuned/dictionary.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        <state vertical-scroll-proportion="2.2666667">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java">
+    <entry file="jar://$PROJECT_DIR$/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/noisedict">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/feat.params">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/digits.dict">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/alpha.dict">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48678413">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/cmudict.0.6d">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65314835">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/dictionary.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.0098522">
+          <caret line="383" column="0" selection-start-line="383" selection-start-column="0" selection-end-line="383" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned_speaker/1625.dic">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/1625.sent">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="352" column="14" selection-start-line="352" selection-start-column="14" selection-end-line="352" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1232,45 +1270,34 @@
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="235" column="27" selection-start-line="235" selection-start-column="27" selection-end-line="235" selection-end-column="27" />
+          <caret line="176" column="5" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/recognition/RecognitionThread.java">
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/en-us.lm">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="228" column="44" selection-start-line="228" selection-start-column="44" selection-end-line="228" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned/dictionary.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4236112">
-          <caret line="138" column="21" selection-start-line="138" selection-start-column="21" selection-end-line="138" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="115" selection-start-line="35" selection-start-column="115" selection-end-line="35" selection-end-column="115" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/recognition/pascal.config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4555556">
-          <caret line="158" column="65" selection-start-line="158" selection-start-column="65" selection-end-line="158" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="181" column="69" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bakalenko/speech/recognition/RecognitionThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.461837">
+          <caret line="158" column="42" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

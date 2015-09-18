@@ -103,14 +103,9 @@ public class RecognitionThread implements Runnable {
                     result.append(singleUtteredWord);
                     break;
                 }
-                case "and": {
-                    singleUtteredWord = "and ";
-                    result.append(singleUtteredWord);
-                    break;
-                }
                 case "multiply":
                 case "asterisk": {
-                    singleUtteredWord = "*";
+                    singleUtteredWord = "* ";
                     result.append(singleUtteredWord);
                     break;
                 }
@@ -130,12 +125,12 @@ public class RecognitionThread implements Runnable {
                     break;
                 }
                 case "colon": {
-                    singleUtteredWord = ":";
+                    singleUtteredWord = ": ";
                     result.append(singleUtteredWord);
                     break;
                 }
                 case "comma": {
-                    singleUtteredWord = ",";
+                    singleUtteredWord = ", ";
                     result.append(singleUtteredWord);
                     break;
                 }
@@ -146,7 +141,7 @@ public class RecognitionThread implements Runnable {
                     break;
                 }
                 case "equals": {
-                    singleUtteredWord = "=";
+                    singleUtteredWord = "= ";
                     result.append(singleUtteredWord);
                     break;
                 }
@@ -160,18 +155,23 @@ public class RecognitionThread implements Runnable {
                     result.append(singleUtteredWord);
                     break;
                 }
+                case "assign": {
+                    singleUtteredWord = "= ";
+                    result.append(singleUtteredWord);
+                    break;
+                }
                 case "less": {
-                    singleUtteredWord = "<";
+                    singleUtteredWord = "< ";
                     result.append(singleUtteredWord);
                     break;
                 }
                 case "minus": {
-                    singleUtteredWord = "-";
+                    singleUtteredWord = "- ";
                     result.append(singleUtteredWord);
                     break;
                 }
                 case "more": {
-                    singleUtteredWord = ">";
+                    singleUtteredWord = "> ";
                     result.append(singleUtteredWord);
                     break;
                 }
@@ -181,32 +181,27 @@ public class RecognitionThread implements Runnable {
                     break;
                 }
                 case "not-equal": {
-                    singleUtteredWord = "<>";
-                    result.append(singleUtteredWord);
-                    break;
-                }
-                case "percent": {
-                    singleUtteredWord = "%";
+                    singleUtteredWord = "<> ";
                     result.append(singleUtteredWord);
                     break;
                 }
                 case "plus": {
-                    singleUtteredWord = "+";
+                    singleUtteredWord = "+ ";
                     result.append(singleUtteredWord);
                     break;
                 }
                 case "procedure": {
-                    singleUtteredWord = "Procedure";
+                    singleUtteredWord = "Procedure ";
                     result.append(singleUtteredWord);
                     break;
                 }
                 case "function": {
-                    singleUtteredWord = "Function";
+                    singleUtteredWord = "Function ";
                     result.append(singleUtteredWord);
                     break;
                 }
                 case "program": {
-                    singleUtteredWord = "Program";
+                    singleUtteredWord = "Program ";
                     result.append(singleUtteredWord);
                     break;
                 }
@@ -251,7 +246,7 @@ public class RecognitionThread implements Runnable {
                     break;
                 }
                 default: {
-                    singleUtteredWord = singleUtteredWord;
+                    singleUtteredWord = singleUtteredWord + " ";
                     result.append(singleUtteredWord);
                     break;
                 }
