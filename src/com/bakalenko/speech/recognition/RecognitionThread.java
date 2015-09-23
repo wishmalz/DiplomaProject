@@ -156,7 +156,7 @@ public class RecognitionThread implements Runnable {
                     break;
                 }
                 case "assign": {
-                    singleUtteredWord = "= ";
+                    singleUtteredWord = ":= ";
                     result.append(singleUtteredWord);
                     break;
                 }
