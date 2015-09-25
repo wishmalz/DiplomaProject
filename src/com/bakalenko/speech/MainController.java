@@ -66,6 +66,7 @@ public class MainController implements Initializable{
     @FXML private TextArea inputPlainText;
     @FXML private TextFlow highlightedText;
     final FileChooser fileChooser = new FileChooser();
+    private boolean isFirstStart = true;
 
     @Override
     public void initialize(URL location, ResourceBundle bundle) {
@@ -162,11 +163,38 @@ public class MainController implements Initializable{
     @FXML
     private void startRecognition() {
         inputPlainText.setEditable(false);
-        if(recognitionThread == null) {
-            recognitionThread = new RecognitionThread(statusLabel, inputPlainText);
+        if(isFirstStart == false && recognitionThread != null) {
+            if(!voiceInputBtn.isSelected()) {
+                recognitionThread.SuspendThread();
+                System.out.println("Recognition thread suspended");
+            }
+            if(voiceInputBtn.isSelected()) {
+                recognitionThread.ResumeThread();
+                System.out.println("Recognition thread resumed");
+            }
         }
-        //splitPaneTwoTextAreas.setDividerPositions(0);
+        if(isFirstStart == true) {
+            recognitionThread = new RecognitionThread(statusLabel, inputPlainText);
+            isFirstStart = false;
+            System.out.println("Recognition thread first launch");
+        }
+        /*if(voiceInputBtn.isArmed()) {
+            System.out.println("+");
+        }
+        if (!voiceInputBtn.isArmed()) {
+            System.out.println("-");
+        }
+        if(voiceInputBtn.isSelected())
+        {
+            System.out.println("//");
+        }
+        if(!voiceInputBtn.isSelected())
+        {
+            System.out.println("**");
+        }*/
     }
+
+
 
     public void addText(String text) {
 

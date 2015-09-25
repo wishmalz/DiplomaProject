@@ -30,19 +30,20 @@ public class RecognitionThread implements Runnable {
     private Microphone microphone;
     private Result result;
     private String resultString;
+    private boolean isSuspended;
 
     public RecognitionThread(Label statusText, TextArea mainText) {
         statusLabel = statusText;
         text = mainText;
         tRecog = new Thread(this, "Speech recognition thread");
         System.out.println("Child thread: " + tRecog);
+        isSuspended = false;
         tRecog.start();
     }
 
     public void run() {
         cm = new ConfigurationManager(RecognitionThread.class.getResource("pascal.config.xml"));
 
-        // allocate the recognizer
         System.out.println("Loading...");
         Platform.runLater(new Runnable() {
             @Override
@@ -50,6 +51,8 @@ public class RecognitionThread implements Runnable {
                 statusLabel.setText("Loading...");
             }
         });
+
+        // allocate the recognizer
         recognizer = (Recognizer) cm.lookup("recognizer");
         recognizer.allocate();
 
@@ -59,14 +62,21 @@ public class RecognitionThread implements Runnable {
             System.out.println("Cannot start microphone");
             recognizer.deallocate();
             System.exit(1);
-        }
-        else {
+        } else {
             System.out.println("Microphone started");
         }
 
-        //statusLabel.setText("Recognition started");
         // loop the recognition until the program exits
         while (true) {
+            synchronized (this) {
+                while(isSuspended) {
+                    try {
+                        wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
             System.out.println("Recognition started. Say smthng");
             Platform.runLater(new Runnable() {
                 @Override
@@ -77,8 +87,7 @@ public class RecognitionThread implements Runnable {
             result = recognizer.recognize();
 
             if (result != null) {
-                resultString = result.getBestFinalResultNoFiller();//getBestFinalToken().getWordPathNoFiller();
-                //getBestFinalResultNoFiller()
+                resultString = result.getBestFinalResultNoFiller();
 
                 Platform.runLater(new Runnable() {
                     @Override
@@ -94,19 +103,20 @@ public class RecognitionThread implements Runnable {
 
     public String replaceWords(String inputText) {
         StringBuffer result = new StringBuffer(0);
-        String [] words = inputText.split("[\\s]");
-        for(String singleUtteredWord:words){
+        String[] words = inputText.split("[\\s]");
+        for (String singleUtteredWord : words) {
             switch (singleUtteredWord) {
-                case "divide":
+                case "divide": {
+                    result.append("/ ");
+                    break;
+                }
                 case "slash": {
-                    singleUtteredWord = "/";
-                    result.append(singleUtteredWord);
+                    result.append("/");
                     break;
                 }
                 case "multiply":
                 case "asterisk": {
-                    singleUtteredWord = "* ";
-                    result.append(singleUtteredWord);
+                    result.append("* ");
                     break;
                 }
                 case "at": {
@@ -115,145 +125,137 @@ public class RecognitionThread implements Runnable {
                     break;
                 }
                 case "backslash": {
-                    singleUtteredWord = "\\";
-                    result.append(singleUtteredWord);
+                    result.append("\\ ");
                     break;
                 }
                 case "caret": {
-                    singleUtteredWord = "^";
-                    result.append(singleUtteredWord);
+                    result.append("^ ");
                     break;
                 }
                 case "colon": {
-                    singleUtteredWord = ": ";
-                    result.append(singleUtteredWord);
+                    result.append(": ");
                     break;
                 }
                 case "comma": {
-                    singleUtteredWord = ", ";
-                    result.append(singleUtteredWord);
+                    result.append(", ");
                     break;
                 }
                 case "full-stop":
                 case "dot": {
-                    singleUtteredWord = ".";
-                    result.append(singleUtteredWord);
+                    result.append(".");
                     break;
                 }
                 case "equals": {
-                    singleUtteredWord = "= ";
-                    result.append(singleUtteredWord);
+                    result.append("= ");
                     break;
                 }
                 case "left-parenthesis": {
-                    singleUtteredWord = "(";
-                    result.append(singleUtteredWord);
+                    result.append("(");
                     break;
                 }
                 case "left-square-bracket": {
-                    singleUtteredWord = "[";
-                    result.append(singleUtteredWord);
+                    result.append("[");
                     break;
                 }
                 case "assign": {
-                    singleUtteredWord = ":= ";
-                    result.append(singleUtteredWord);
+                    result.append(":= ");
                     break;
                 }
                 case "less": {
-                    singleUtteredWord = "< ";
-                    result.append(singleUtteredWord);
+                    result.append("< ");
                     break;
                 }
                 case "minus": {
-                    singleUtteredWord = "- ";
-                    result.append(singleUtteredWord);
+                    result.append("- ");
                     break;
                 }
                 case "more": {
-                    singleUtteredWord = "> ";
-                    result.append(singleUtteredWord);
+                    result.append("> ");
                     break;
                 }
                 case "newline": {
-                    singleUtteredWord = "\n";
-                    result.append(singleUtteredWord);
+                    result.append("\n");
+                    break;
+                }
+                case "var": {
+                    result.append("var\n");
+                    break;
+                }
+                case "begin": {
+                    result.append("begin\n");
                     break;
                 }
                 case "not-equal": {
-                    singleUtteredWord = "<> ";
-                    result.append(singleUtteredWord);
+                    result.append("<> ");
                     break;
                 }
                 case "plus": {
-                    singleUtteredWord = "+ ";
-                    result.append(singleUtteredWord);
+                    result.append("+ ");
                     break;
                 }
                 case "procedure": {
-                    singleUtteredWord = "Procedure ";
-                    result.append(singleUtteredWord);
+                    result.append("Procedure ");
                     break;
                 }
                 case "function": {
-                    singleUtteredWord = "Function ";
-                    result.append(singleUtteredWord);
+                    result.append("Function ");
                     break;
                 }
                 case "program": {
-                    singleUtteredWord = "Program ";
-                    result.append(singleUtteredWord);
+                    result.append("Program ");
                     break;
                 }
                 case "quote": {
-                    singleUtteredWord = "'";
-                    result.append(singleUtteredWord);
+                    result.append("'");
                     break;
                 }
                 case "right-parenthesis": {
-                    singleUtteredWord = ")";
-                    result.append(singleUtteredWord);
+                    result.append(")");
                     break;
                 }
                 case "right-square-bracket": {
-                    singleUtteredWord = "]";
-                    result.append(singleUtteredWord);
+                    result.append("]");
                     break;
                 }
                 case "semicolon": {
-                    singleUtteredWord = ";\n";
-                    result.append(singleUtteredWord);
+                    result.append(";\n");
                     break;
                 }
                 case "space": {
-                    singleUtteredWord = " ";
-                    result.append(singleUtteredWord);
+                    result.append(" ");
                     break;
                 }
                 case "square": {
-                    singleUtteredWord = "sqr";
-                    result.append(singleUtteredWord);
+                    result.append("sqr");
                     break;
                 }
                 case "square-root": {
-                    singleUtteredWord = "sqrt";
-                    result.append(singleUtteredWord);
+                    result.append("sqrt");
                     break;
                 }
                 case "tab": {
-                    singleUtteredWord = "    ";
-                    result.append(singleUtteredWord);
+                    result.append("    ");
                     break;
                 }
                 default: {
-                    singleUtteredWord = singleUtteredWord + " ";
-                    result.append(singleUtteredWord);
+                    result.append(singleUtteredWord + " ");
                     break;
                 }
             }
         }
 
         return result.toString();
+    }
+
+    public synchronized void SuspendThread() {
+        isSuspended = true;
+        microphone.stopRecording();
+    }
+
+    public synchronized void ResumeThread() {
+        isSuspended = false;
+        microphone.startRecording();
+        notify();
     }
 
 }
