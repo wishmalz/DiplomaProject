@@ -21,7 +21,7 @@ import java.awt.*;
  * Class with speech recognition thread
  * Created by TwinMo on 28.04.2015.
  */
-public class RecognitionThread implements Runnable {
+public class RecognitionThread extends Thread {
     public Thread tRecog;
     private Label statusLabel;
     private TextArea text;
@@ -31,6 +31,7 @@ public class RecognitionThread implements Runnable {
     private Result result;
     private String resultString;
     private boolean isSuspended;
+    private static boolean recognitionFlag;
 
     public RecognitionThread(Label statusText, TextArea mainText) {
         statusLabel = statusText;
@@ -38,6 +39,7 @@ public class RecognitionThread implements Runnable {
         tRecog = new Thread(this, "Speech recognition thread");
         System.out.println("Child thread: " + tRecog);
         isSuspended = false;
+        recognitionFlag = true;
         tRecog.start();
     }
 
@@ -67,9 +69,9 @@ public class RecognitionThread implements Runnable {
         }
 
         // loop the recognition until the program exits
-        while (true) {
+        while (recognitionFlag) {
             synchronized (this) {
-                while(isSuspended) {
+                while (isSuspended) {
                     try {
                         wait();
                     } catch (InterruptedException e) {
@@ -77,6 +79,7 @@ public class RecognitionThread implements Runnable {
                     }
                 }
             }
+
             System.out.println("Recognition started. Say smthng");
             Platform.runLater(new Runnable() {
                 @Override
@@ -256,6 +259,11 @@ public class RecognitionThread implements Runnable {
         isSuspended = false;
         microphone.startRecording();
         notify();
+    }
+
+    public static synchronized void stopRecognitionThread() {
+        recognitionFlag = false;
+        System.exit(-1);
     }
 
 }

@@ -17,6 +17,7 @@
  */
 package com.bakalenko.speech;
 
+import com.bakalenko.speech.recognition.RecognitionThread;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -67,7 +68,11 @@ public class Main extends Application {
         });
     }
 
-
+    @Override
+    public void stop() {
+        RecognitionThread.stopRecognitionThread();
+        System.out.println("Close app");
+    }
 
     // Launch the JavaFX application
     public static void main(String[] args) {

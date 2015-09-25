@@ -25,7 +25,7 @@ import javafx.util.Pair;
  * @author Wish
  */
 public class MainController implements Initializable{
-    private RecognitionThread recognitionThread;
+    public RecognitionThread recognitionThread;
     private ResourceBundle resources;
     @FXML private BorderPane pane;
     @FXML private Menu fileMenu;
@@ -163,7 +163,7 @@ public class MainController implements Initializable{
     @FXML
     private void startRecognition() {
         inputPlainText.setEditable(false);
-        if(isFirstStart == false && recognitionThread != null) {
+        if(isFirstStart == false) {
             if(!voiceInputBtn.isSelected()) {
                 recognitionThread.SuspendThread();
                 System.out.println("Recognition thread suspended");
