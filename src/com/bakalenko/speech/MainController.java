@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.*;
 
 import com.bakalenko.speech.recognition.RecognitionThread;
+import com.bakalenko.speech.recognition.Replacer;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +25,7 @@ import javafx.util.Pair;
  * @version 25.08.2015
  * @author Wish
  */
-public class MainController implements Initializable{
+public class MainController implements Initializable, Observer{
     public RecognitionThread recognitionThread;
     private ResourceBundle resources;
     @FXML private BorderPane pane;
@@ -92,6 +93,7 @@ public class MainController implements Initializable{
     @FXML
     private void changeLangRus() throws IOException {
         updateUI(Locale.forLanguageTag("ru"));
+        ApplicationSettings.applicationLanguage = Locale.forLanguageTag("ru");
         /* TODO добавить флаг, чтобы не перерисовывать зря, если мы уже на том языке, в который переключаемся*/
     }
 
@@ -102,6 +104,7 @@ public class MainController implements Initializable{
     @FXML
     private void changeLangEng()throws IOException {
         updateUI(Locale.ENGLISH);
+        ApplicationSettings.applicationLanguage = Locale.ENGLISH;
     }
 
     @FXML
@@ -175,33 +178,42 @@ public class MainController implements Initializable{
         }
         if(isFirstStart == true) {
             recognitionThread = new RecognitionThread(statusLabel, inputPlainText);
+            recognitionThread.addObserver(this);
             isFirstStart = false;
             System.out.println("Recognition thread first launch");
         }
-        /*if(voiceInputBtn.isArmed()) {
-            System.out.println("+");
-        }
-        if (!voiceInputBtn.isArmed()) {
-            System.out.println("-");
-        }
-        if(voiceInputBtn.isSelected())
-        {
-            System.out.println("//");
-        }
-        if(!voiceInputBtn.isSelected())
-        {
-            System.out.println("**");
-        }*/
-    }
-
-
-
-    public void addText(String text) {
 
     }
 
-    public void setStatus(String statusText) {
-        statusLabel.setText(statusText);
+    @Override
+    public void update(Observable o, Object arg) {
+        Integer forIfInteger = new Integer(1);
+        String forIfString = new String("1");
+
+        if(arg.getClass() == forIfInteger.getClass()) {     // if thread changed its state
+            switch (recognitionThread.getRecognitionThreadCode()) {
+                case 0: {
+                    statusLabel.setText("Loading...");
+                    System.out.println("Loading...");
+                    break;
+                }
+                case 1: {
+                    statusLabel.setText("Recognition started");
+                    System.out.println("Recognition started");
+                    break;
+                }
+                case 2: {
+                    statusLabel.setText("Recognition suspended");
+                    System.out.println("Recognition suspended");
+                    break;
+                }
+            }
+
+        }
+        if(arg.getClass() == forIfString.getClass()) {      // if thread returning result string
+            inputPlainText.appendText(Replacer.replaceWords(recognitionThread.getResultString()));
+        }
+
     }
 
     @FXML
@@ -335,5 +347,4 @@ public class MainController implements Initializable{
             System.out.println("Ok program dialog");
         }
     }
-
 }

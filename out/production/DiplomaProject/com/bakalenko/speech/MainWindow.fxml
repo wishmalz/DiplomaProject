@@ -96,9 +96,9 @@
                             </accelerator>
                         </MenuItem>
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="%help.aboutProgram"
+                        <MenuItem fx:id="aboutProgram" mnemonicParsing="false" text="%help.aboutProgram"
                                   onAction="#aboutProgram"/>
-                        <MenuItem mnemonicParsing="false" text="%help.aboutAuthor"
+                        <MenuItem fx:id="aboutAuthor" mnemonicParsing="false" text="%help.aboutAuthor"
                                   onAction="#aboutAuthor"/>
                     </items>
                 </Menu>

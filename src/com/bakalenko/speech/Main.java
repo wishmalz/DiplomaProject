@@ -43,7 +43,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
-        ResourceBundle textResources = ResourceBundle.getBundle("com.bakalenko.resources.TextBundle", currentLocale);
+        ResourceBundle textResources = ResourceBundle.getBundle("com.bakalenko.resources.TextBundle",
+                ApplicationSettings.applicationLanguage);
         BorderPane root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"), textResources);
 
         mainScene = new Scene(root);
@@ -70,8 +71,8 @@ public class Main extends Application {
 
     @Override
     public void stop() {
-        RecognitionThread.stopRecognitionThread();
         System.out.println("Close app");
+        System.exit(-1);
     }
 
     // Launch the JavaFX application

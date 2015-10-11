@@ -9,19 +9,18 @@ import edu.cmu.sphinx.recognizer.Recognizer;
 import edu.cmu.sphinx.result.Result;
 import edu.cmu.sphinx.util.props.ConfigurationManager;
 import javafx.application.Platform;
-import javafx.concurrent.Service;
-import javafx.concurrent.Task;
-import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-import java.awt.*;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.ResourceBundle;
 
 /**
  * Class with speech recognition thread
  * Created by TwinMo on 28.04.2015.
  */
-public class RecognitionThread extends Thread {
+public class RecognitionThread extends Observable implements Runnable{
     public Thread tRecog;
     private Label statusLabel;
     private TextArea text;
@@ -30,8 +29,10 @@ public class RecognitionThread extends Thread {
     private Microphone microphone;
     private Result result;
     private String resultString;
+    private int recognitionThreadCode;
     private boolean isSuspended;
     private static boolean recognitionFlag;
+    private ResourceBundle resources;
 
     public RecognitionThread(Label statusText, TextArea mainText) {
         statusLabel = statusText;
@@ -46,19 +47,13 @@ public class RecognitionThread extends Thread {
     public void run() {
         cm = new ConfigurationManager(RecognitionThread.class.getResource("pascal.config.xml"));
 
-        System.out.println("Loading...");
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                statusLabel.setText("Loading...");
-            }
-        });
+        setRecognitionThreadCode(0); // Loading
 
         // allocate the recognizer
         recognizer = (Recognizer) cm.lookup("recognizer");
         recognizer.allocate();
 
-        // start the microphone or exit the program is this is not possible
+        // start the microphone or exit the program if this is not possible
         microphone = (Microphone) cm.lookup("microphone");
         if (!microphone.startRecording()) {
             System.out.println("Cannot start microphone");
@@ -80,22 +75,18 @@ public class RecognitionThread extends Thread {
                 }
             }
 
-            System.out.println("Recognition started. Say smthng");
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    statusLabel.setText("Recognition started");
-                }
-            });
-            result = recognizer.recognize();
+            setRecognitionThreadCode(1); // recognition started
 
+            result = recognizer.recognize();
             if (result != null) {
                 resultString = result.getBestFinalResultNoFiller();
+
+                setChanged();
 
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        text.appendText(replaceWords(resultString));
+                        notifyObservers(resultString);
                     }
                 });
 
@@ -104,155 +95,10 @@ public class RecognitionThread extends Thread {
         }
     }
 
-    public String replaceWords(String inputText) {
-        StringBuffer result = new StringBuffer(0);
-        String[] words = inputText.split("[\\s]");
-        for (String singleUtteredWord : words) {
-            switch (singleUtteredWord) {
-                case "divide": {
-                    result.append("/ ");
-                    break;
-                }
-                case "slash": {
-                    result.append("/");
-                    break;
-                }
-                case "multiply":
-                case "asterisk": {
-                    result.append("* ");
-                    break;
-                }
-                case "at": {
-                    singleUtteredWord = "@";
-                    result.append(singleUtteredWord);
-                    break;
-                }
-                case "backslash": {
-                    result.append("\\ ");
-                    break;
-                }
-                case "caret": {
-                    result.append("^ ");
-                    break;
-                }
-                case "colon": {
-                    result.append(": ");
-                    break;
-                }
-                case "comma": {
-                    result.append(", ");
-                    break;
-                }
-                case "full-stop":
-                case "dot": {
-                    result.append(".");
-                    break;
-                }
-                case "equals": {
-                    result.append("= ");
-                    break;
-                }
-                case "left-parenthesis": {
-                    result.append("(");
-                    break;
-                }
-                case "left-square-bracket": {
-                    result.append("[");
-                    break;
-                }
-                case "assign": {
-                    result.append(":= ");
-                    break;
-                }
-                case "less": {
-                    result.append("< ");
-                    break;
-                }
-                case "minus": {
-                    result.append("- ");
-                    break;
-                }
-                case "more": {
-                    result.append("> ");
-                    break;
-                }
-                case "newline": {
-                    result.append("\n");
-                    break;
-                }
-                case "var": {
-                    result.append("var\n");
-                    break;
-                }
-                case "begin": {
-                    result.append("begin\n");
-                    break;
-                }
-                case "not-equal": {
-                    result.append("<> ");
-                    break;
-                }
-                case "plus": {
-                    result.append("+ ");
-                    break;
-                }
-                case "procedure": {
-                    result.append("Procedure ");
-                    break;
-                }
-                case "function": {
-                    result.append("Function ");
-                    break;
-                }
-                case "program": {
-                    result.append("Program ");
-                    break;
-                }
-                case "quote": {
-                    result.append("'");
-                    break;
-                }
-                case "right-parenthesis": {
-                    result.append(")");
-                    break;
-                }
-                case "right-square-bracket": {
-                    result.append("]");
-                    break;
-                }
-                case "semicolon": {
-                    result.append(";\n");
-                    break;
-                }
-                case "space": {
-                    result.append(" ");
-                    break;
-                }
-                case "square": {
-                    result.append("sqr");
-                    break;
-                }
-                case "square-root": {
-                    result.append("sqrt");
-                    break;
-                }
-                case "tab": {
-                    result.append("    ");
-                    break;
-                }
-                default: {
-                    result.append(singleUtteredWord + " ");
-                    break;
-                }
-            }
-        }
-
-        return result.toString();
-    }
-
     public synchronized void SuspendThread() {
         isSuspended = true;
         microphone.stopRecording();
+        setRecognitionThreadCode(2); // recognition suspended
     }
 
     public synchronized void ResumeThread() {
@@ -261,9 +107,37 @@ public class RecognitionThread extends Thread {
         notify();
     }
 
-    public static synchronized void stopRecognitionThread() {
-        recognitionFlag = false;
-        System.exit(-1);
+    /*private void printStatusMessage(String statusMessage) {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                statusLabel.setText(statusMessage);
+            }
+        });
+    }*/
+
+    public void setResultString(String resultString) {
+        this.resultString = resultString;
+    }
+
+    public String getResultString() {
+        return resultString;
+    }
+
+    public void setRecognitionThreadCode(int recognitionThreadCode) {
+        this.recognitionThreadCode = recognitionThreadCode;
+        setChanged();
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                notifyObservers(recognitionThreadCode);
+            }
+        });
+    }
+
+    public int getRecognitionThreadCode() {
+        return recognitionThreadCode;
     }
 
 }
