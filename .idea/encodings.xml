@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/src/com/bakalenko/speech/Main.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/bakalenko/speech/MainController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/bakalenko/speech/recognition/RecognitionThread.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned_speaker/cont/dictionary.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned_speaker/cont_plus/dictionary.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/bakalenko/sphinx_data/tuned_speaker/dictionary.txt" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>

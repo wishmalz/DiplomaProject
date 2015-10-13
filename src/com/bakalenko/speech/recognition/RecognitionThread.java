@@ -22,8 +22,6 @@ import java.util.ResourceBundle;
  */
 public class RecognitionThread extends Observable implements Runnable{
     public Thread tRecog;
-    private Label statusLabel;
-    private TextArea text;
     private ConfigurationManager cm;
     private Recognizer recognizer;
     private Microphone microphone;
@@ -32,11 +30,8 @@ public class RecognitionThread extends Observable implements Runnable{
     private int recognitionThreadCode;
     private boolean isSuspended;
     private static boolean recognitionFlag;
-    private ResourceBundle resources;
 
-    public RecognitionThread(Label statusText, TextArea mainText) {
-        statusLabel = statusText;
-        text = mainText;
+    public RecognitionThread() {
         tRecog = new Thread(this, "Speech recognition thread");
         System.out.println("Child thread: " + tRecog);
         isSuspended = false;
@@ -82,7 +77,6 @@ public class RecognitionThread extends Observable implements Runnable{
                 resultString = result.getBestFinalResultNoFiller();
 
                 setChanged();
-
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
@@ -107,15 +101,6 @@ public class RecognitionThread extends Observable implements Runnable{
         notify();
     }
 
-    /*private void printStatusMessage(String statusMessage) {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                statusLabel.setText(statusMessage);
-            }
-        });
-    }*/
-
     public void setResultString(String resultString) {
         this.resultString = resultString;
     }
@@ -126,8 +111,8 @@ public class RecognitionThread extends Observable implements Runnable{
 
     public void setRecognitionThreadCode(int recognitionThreadCode) {
         this.recognitionThreadCode = recognitionThreadCode;
-        setChanged();
 
+        setChanged();
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
