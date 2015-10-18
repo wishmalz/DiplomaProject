@@ -214,8 +214,8 @@ public class MainController implements Initializable, Observer{
         if(arg.getClass() == forIfString.getClass()) {      // if thread returning result string
             String recognitionResult = recognitionThread.getResultString();
             String code = Replacer.replaceWords(recognitionResult);
-            inputPlainText.appendText(code);
-            //InputHelper.inputHelp(code, inputPlainText);
+            //inputPlainText.appendText(code);
+            InputHelper.inputHelp(code, inputPlainText);
         }
 
     }
