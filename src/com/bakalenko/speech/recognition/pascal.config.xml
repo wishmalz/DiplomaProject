@@ -143,7 +143,7 @@
         <property name="dictionaryPath"
                   value="resource:/cmudict-en-us.dict"/>
         <property name="fillerPath" 
-	          value="resource:/com/bakalenko/sphinx_data/tuned_speaker/cont/noisedict"/>
+	          value="resource:/com/bakalenko/sphinx_data/tuned_speaker/cont_plus/noisedict"/>
         <property name="addSilEndingPronunciation" value="false"/>
         <property name="wordReplacement" value="&lt;sil&gt;"/>
         <property name="unitManager" value="unitManager"/>
@@ -176,7 +176,7 @@
     <component name="wsjLoader" type="edu.cmu.sphinx.linguist.acoustic.tiedstate.Sphinx3Loader">
         <property name="logMath" value="logMath"/>
         <property name="unitManager" value="unitManager"/>
-        <property name="location" value="resource:/com/bakalenko/sphinx_data/tuned_speaker/cont"/>
+        <property name="location" value="resource:/com/bakalenko/sphinx_data/tuned_speaker/cont_plus"/>
     </component>
 
     <!-- ******************************************************** -->

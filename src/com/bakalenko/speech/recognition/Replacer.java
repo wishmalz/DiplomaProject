@@ -88,7 +88,7 @@ public class Replacer {
                     break;
                 }
                 case "div": {
-                    result.append("div ");
+                    result.append("div");
                     break;
                 }
                 case "divide": {
@@ -132,7 +132,7 @@ public class Replacer {
                     break;
                 }
                 case "false": {
-                    result.append("false ");
+                    result.append("false");
                     break;
                 }
                 case "file": {
@@ -208,7 +208,7 @@ public class Replacer {
                     break;
                 }
                 case "mod": {
-                    result.append("mod ");
+                    result.append("mod");
                     break;
                 }
                 case "more": {
@@ -280,11 +280,11 @@ public class Replacer {
                     break;
                 }
                 case "random": {
-                    result.append("random ");
+                    result.append("random");
                     break;
                 }
                 case "randomize": {
-                    result.append("randomize ");
+                    result.append("randomize");
                     break;
                 }
                 case "read": {
@@ -320,11 +320,11 @@ public class Replacer {
                     break;
                 }
                 case "shl": {
-                    result.append("shl ");
+                    result.append("shl");
                     break;
                 }
                 case "shr": {
-                    result.append("shr ");
+                    result.append("shr");
                     break;
                 }
                 case "single": {
@@ -340,11 +340,11 @@ public class Replacer {
                     break;
                 }
                 case "square": {
-                    result.append("sqr ");
+                    result.append("sqr");
                     break;
                 }
                 case "square-root": {
-                    result.append("sqrt ");
+                    result.append("sqrt");
                     break;
                 }
                 case "string": {
@@ -364,7 +364,7 @@ public class Replacer {
                     break;
                 }
                 case "true": {
-                    result.append("true ");
+                    result.append("true");
                     break;
                 }
                 case "type": {

@@ -166,7 +166,8 @@ public class MainController implements Initializable, Observer{
 
     @FXML
     private void startRecognition() {
-        inputPlainText.setEditable(false);
+        //inputPlainText.setEditable(false);
+
         if(isFirstStart == false) {
             if(!voiceInputBtn.isSelected()) {
                 recognitionThread.SuspendThread();

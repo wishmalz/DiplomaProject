@@ -43,7 +43,8 @@ public class InputHelper {
         if ((nameIndex == -1) && (valueIndex == -1) && (variableIndex == -1)) {
             isNotLastReplacement = false;
             resultTextAfterReplacement.append(recognitionResultText);
-            resultText.appendText(resultTextAfterReplacement.toString());
+            //resultText.appendText(resultTextAfterReplacement.toString());
+            resultText.insertText(resultText.getCaretPosition(), resultTextAfterReplacement.toString());
         }
 
         while (isNotLastReplacement) {
@@ -51,7 +52,8 @@ public class InputHelper {
 
             stringForDynamicAppend = temp.substring(startIndex, currentReplacementIndex);
             resultTextAfterReplacement.append(stringForDynamicAppend);
-            resultText.appendText(stringForDynamicAppend);
+            //resultText.appendText(stringForDynamicAppend);
+            resultText.insertText(resultText.getCaretPosition(), stringForDynamicAppend);
 
             if(!isNotLastReplacement)
                 break;
@@ -85,9 +87,10 @@ public class InputHelper {
             System.out.println("Your " + replacement + ": " + result.get());
         }
 
-        stringForDynamicAppend =result.get().toString();
+        stringForDynamicAppend = result.get().toString();
         resultTextAfterReplacement.append(stringForDynamicAppend);
-        resultText.appendText(stringForDynamicAppend);
+        //resultText.appendText(stringForDynamicAppend);
+        resultText.insertText(resultText.getCaretPosition(), stringForDynamicAppend);
 
         temp.replace(startIndex, currentReplacementIndex + replacement.length(), resultTextAfterReplacement
                 .substring(startIndexForRes, resultTextAfterReplacement.length()));
@@ -125,6 +128,8 @@ public class InputHelper {
                 isNotLastReplacement = false;
                 currentReplacementIndex = temp.length();
             }
+
+            //TODO: добавить обработку, если в имени есть name, variable, value или если имя - слово из паскаля
         }
 
         // if there are no replacements in string

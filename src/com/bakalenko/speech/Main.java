@@ -35,8 +35,6 @@ import java.util.ResourceBundle;
  * @author Wish
  */
 public class Main extends Application {
-    /** Variable with default locale for the application */
-    private Locale currentLocale = Locale.forLanguageTag("ru");
     private Scene mainScene;
     public static Stage stage;
 
@@ -54,7 +52,7 @@ public class Main extends Application {
         primaryStage.getScene().getStylesheets().add("com/bakalenko/resources/css/LightTheme.css");
         primaryStage.show();
 
-        mainScene.widthProperty().addListener(new ChangeListener<Number>() {
+        /*mainScene.widthProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
                 System.out.println("Width: " + newSceneWidth);
@@ -66,7 +64,7 @@ public class Main extends Application {
             public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
                 System.out.println("Height: " + newSceneHeight);
             }
-        });
+        });*/
     }
 
     @Override
