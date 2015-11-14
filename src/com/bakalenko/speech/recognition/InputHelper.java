@@ -43,7 +43,6 @@ public class InputHelper {
         if ((nameIndex == -1) && (valueIndex == -1) && (variableIndex == -1)) {
             isNotLastReplacement = false;
             resultTextAfterReplacement.append(recognitionResultText);
-            //resultText.appendText(resultTextAfterReplacement.toString());
             resultText.insertText(resultText.getCaretPosition(), resultTextAfterReplacement.toString());
         }
 
@@ -52,7 +51,6 @@ public class InputHelper {
 
             stringForDynamicAppend = temp.substring(startIndex, currentReplacementIndex);
             resultTextAfterReplacement.append(stringForDynamicAppend);
-            //resultText.appendText(stringForDynamicAppend);
             resultText.insertText(resultText.getCaretPosition(), stringForDynamicAppend);
 
             if(!isNotLastReplacement)
@@ -85,51 +83,44 @@ public class InputHelper {
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()){
             System.out.println("Your " + replacement + ": " + result.get());
+            stringForDynamicAppend = result.get().toString();
         }
+        else stringForDynamicAppend = replacement;
 
-        stringForDynamicAppend = result.get().toString();
         resultTextAfterReplacement.append(stringForDynamicAppend);
-        //resultText.appendText(stringForDynamicAppend);
         resultText.insertText(resultText.getCaretPosition(), stringForDynamicAppend);
 
         temp.replace(startIndex, currentReplacementIndex + replacement.length(), resultTextAfterReplacement
                 .substring(startIndexForRes, resultTextAfterReplacement.length()));
-        startIndex = currentReplacementIndex + result.get().toString().length();
+        startIndex = currentReplacementIndex + stringForDynamicAppend.length();
         startIndexForRes = resultTextAfterReplacement.length();
     }
 
     private static void replacementIndexes() {
-        nameIndex = temp.indexOf("name");
-        valueIndex = temp.indexOf("value");
-        variableIndex = temp.indexOf("variable");
+        String tempStringForReplacementIndexes = temp.substring(startIndex, temp.length());
+        nameIndex = tempStringForReplacementIndexes.indexOf("name");
+        valueIndex = tempStringForReplacementIndexes.indexOf("value");
+        variableIndex = tempStringForReplacementIndexes.indexOf("variable");
         currentReplacementIndex = 999999;
         currentReplacement = -1;
 
         // if replacement exists
         if ((nameIndex != -1) || (valueIndex != -1) || (variableIndex != -1)) {
-            if ((currentReplacementIndex >= nameIndex) && (nameIndex >= 0)) {
+            if ((currentReplacementIndex > nameIndex) && (nameIndex >= 0)) {
                 currentReplacementIndex = nameIndex;
                 currentReplacement = 0;
             }
-            if ((currentReplacementIndex >= variableIndex) && (variableIndex >= 0)) {
+            if ((currentReplacementIndex > variableIndex) && (variableIndex >= 0)) {
                 currentReplacementIndex = variableIndex;
                 currentReplacement = 1;
             }
-            if ((currentReplacementIndex >= valueIndex) && (valueIndex >= 0)) {
+            if ((currentReplacementIndex > valueIndex) && (valueIndex >= 0)) {
                 currentReplacementIndex = valueIndex;
                 currentReplacement = 2;
             }
 
             isNotLastReplacement = true;
-
-            // is replacement word consists of "name/variable/value"
-            if(((nameIndex < startIndex) && (nameIndex != -1)) || ((valueIndex < startIndex) && (valueIndex != -1))
-                    || ((variableIndex < startIndex) && (variableIndex != -1))) {
-                isNotLastReplacement = false;
-                currentReplacementIndex = temp.length();
-            }
-
-            //TODO: добавить обработку, если в имени есть name, variable, value или если имя - слово из паскаля
+            currentReplacementIndex += startIndex;
         }
 
         // if there are no replacements in string
